@@ -1,0 +1,58 @@
+---
+export interface Props {
+  title?: string;
+}
+const { title = 'inventario — Controla tu negocio, vende más, pierde menos' } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content="inventario es la app de gestión de ventas e inventario hecha para el comerciante peruano. Controla stock, registra ventas y genera reportes desde tu celular." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+    <style is:global>
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      :root {
+        --purple: #5B4BDB;
+        --purple-light: #7B6EE8;
+        --purple-dark: #3D2EC4;
+        --purple-xlight: #EEF0FF;
+        --purple-mid: #C4BEF7;
+        --dark: #0A0A0F;
+        --dark-2: #13131A;
+        --dark-3: #1E1E2E;
+        --white: #FFFFFF;
+        --gray-100: #F7F7FB;
+        --gray-200: #EBEBF5;
+        --gray-400: #9090A8;
+        --gray-600: #5A5A72;
+        --gray-800: #2A2A3D;
+        --text: #1A1A2E;
+        --radius: 16px;
+        --radius-sm: 8px;
+        --radius-lg: 24px;
+      }
+      html { scroll-behavior: smooth; }
+      body {
+        font-family: 'DM Sans', sans-serif;
+        background: var(--white);
+        color: var(--text);
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+      }
+      h1, h2, h3, h4 { font-family: 'Sora', sans-serif; }
+
+      /* Scrollbar */
+      ::-webkit-scrollbar { width: 6px; }
+      ::-webkit-scrollbar-track { background: var(--dark); }
+      ::-webkit-scrollbar-thumb { background: var(--purple); border-radius: 99px; }
+    </style>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
